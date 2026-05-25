@@ -12,10 +12,11 @@ pipeline {
     stages {
 
         stage('Clone Repository') {
-            steps {
-                git 'https://github.com/Vedavarshini123/cicd-demo.git'
-            }
+        steps {
+        git branch: 'main',
+            url: 'https://github.com/Vedavarshini123/cicd-demo.git'
         }
+     }
 
         stage('Build Application') {
             steps {
