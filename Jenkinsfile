@@ -2,12 +2,11 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "Vedavarshini123/cicd-demo"
+        DOCKER_IMAGE = "vedavarshini123/cicd-demo"
     }
 
     tools {
-        maven 'Maven'
-        jdk 'JDK17'
+        jdk 'JDK21'
     }
 
     stages {
@@ -20,13 +19,13 @@ pipeline {
 
         stage('Build Application') {
             steps {
-                bat 'mvn clean package'
+                bat 'mvnw.cmd clean package'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'mvn test'
+                bat 'mvnw.cmd test'
             }
         }
 
